@@ -1,0 +1,107 @@
+<td width="245" align="left" valign="top">
+          <table width="238" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                              <td align="left" valign="top">
+                                        <table width="238" border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                        <td align="left" valign="top" class="g-box-up">
+                                                                Add Funds To Your Account
+                                                        </td>
+                                                  </tr>
+                                                  <tr>
+                                                        <td align="right" valign="top" class="si-box-middle">
+                                                                  <table width="238" border="0" cellspacing="0" cellpadding="0" class="defaultText">
+                                                                        <tr>
+                                                                          <td width="25" align="left" valign="top">
+                                                                          <div id="addMoreFunds">	
+                                                                            <table border="0" cellspacing="0" cellpadding="0">
+                                                                                <form name="addFundsToAccount" id="addFundsToAccount" action="" method="post">
+                                                                                 <tr>
+                                                                                    <td>
+                                                                                        <div class="addFundsAmountDiv">
+                                                                                            <input type="radio" name="addFundsAmount" value="5" style="cursor:pointer;" />
+                                                                                        </div>   
+                                                                                        <div class="addFundsAmountLableDiv">$5</div>                                                                                                            
+                                                                                    </td>
+                                                                                </tr>   
+                                                                                 <tr>                                                                                                    
+                                                                                    <td>
+                                                                                        <div class="addFundsAmountDiv">
+                                                                                            <input type="radio" name="addFundsAmount" value="10" style="cursor:pointer;" />
+                                                                                        </div>   
+                                                                                        <div class="addFundsAmountLableDiv">$10</div>                                                                                                            
+                                                                                    </td>
+                                                                                </tr>                                                                                                        
+                                                                                 <tr>                                                                                                                                                                                                        
+                                                                                    <td>
+                                                                                        <div class="addFundsAmountDiv">
+                                                                                            <input type="radio" name="addFundsAmount" value="20" style="cursor:pointer;" />
+                                                                                        </div>   
+                                                                                        <div class="addFundsAmountLableDiv">$20</div>                                                                                                            
+                                                                                    </td>
+                                                                                </tr>                                                                                                        
+                                                                                 <tr>                                                                                                    
+                                                                                    <td>
+                                                                                        <div class="addFundsAmountDiv">
+                                                                                            <input type="radio" name="addFundsAmount" value="30" style="cursor:pointer;" />
+                                                                                        </div>   
+                                                                                        <div class="addFundsAmountLableDiv">$30</div>                                                                                                            
+                                                                                    </td>
+                                                                                </tr>                                                                                                   
+                                                                                  <tr>                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                    <td>
+                                                                                        <div class="addFundsAmountDiv">
+                                                                                            <input type="radio" name="addFundsAmount" value="40" style="cursor:pointer;" />
+                                                                                        </div>   
+                                                                                        <div class="addFundsAmountLableDiv">$40</div>                                                                                                            
+                                                                                    </td>
+                                                                                </tr>                                                                                                                                                                                                           
+                                                                                <tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                    <td>
+                                                                                        <div class="addFundsAmountDiv">
+                                                                                            <input type="radio" name="addFundsAmount" value="50" style="cursor:pointer;" />
+                                                                                        </div>   
+                                                                                        <div class="addFundsAmountLableDiv">$50</div>                                                                                                            
+                                                                                    </td>
+                                                                                </tr>                                                                                                                                                                                                                                                                                                                   
+                                                                                 <tr>                                                                                                                                                                                                                                                                            
+                                                                                    <td>
+                                                                                        <div style="width:50px; height:20px; float:left;">
+                                                                                            <input type="text" name="addOtherFundsAmount" value="Other Amount" onblur="if(this.value=='') this.value='Other Amount';"onfocus="if(this.value=='Other Amount') this.value='';" style="cursor:pointer; width:90px; font-size:11px; margin-left:-20px;" />                                                                                                                                                                                                                    
+                                                                                        </div>                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                    </td>
+                                                                                </tr> 
+                                                                                <tr>
+                                                                                    <td width="18" align="left" valign="top">&nbsp;</td>
+                                                                                </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 			                                                                                                                                                                     <tr>
+                                                                                   <td width="18" align="left" valign="top">                                                                                                        
+                                                                                        <input style="margin-left:-20px;" type="submit" name="addFunds" value="Add Credits" class="btn-element-sub" />
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <?php if (isset($errorMessage)):?>
+                                                                                <tr>
+                                                                                    <td width="38" align="left" valign="top">&nbsp;</td>
+                                                                                </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                			                                                                                                                                                                      <tr>
+                                                                                    <td width="38" align="left" valign="top"><div style="margin-left:-50px; width:200px; height:25px;"><?php echo $errorMessage;?></div></td>
+                                                                                </tr>                                             
+                                                                            	<?php endif;?>
+                                                                                <?php if (isset($successMessage)):?>
+                                                                                <tr>
+                                                                                    <td width="38" align="left" valign="top">&nbsp;</td>
+                                                                                </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                			                                                                                                                                                                      <tr>
+                                                                                    <td width="38" align="left" valign="top"><div style="margin-left:-50px; width:200px; height:25px;"><?php echo $successMessage;?></div></td>
+                                                                                </tr>                                             
+                                                                                <?php endif;?>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    			                                                                                                                                                                                                         									</form>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          			                                                                                                                                                          							</table>
+                                                                          </div>      
+                                                                          </td>
+                                                                   </tr>
+                                                        </td>
+                                                  </tr>
+                                        </table>
+                              </td>
+                    </tr>
+                    <tr>
+                              <td align="left" valign="top" class="si-box-down">&nbsp;</td>
+                    </tr>
+          </table>
+</td>

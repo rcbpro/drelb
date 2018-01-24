@@ -1,0 +1,120 @@
+<td width="245" align="left" valign="top">
+          <table width="238" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                              <td align="left" valign="top">
+                                        <table width="238" border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                            <td align="left" valign="top" class="g-box-up">Register here for free</td>
+                                                  </tr>
+                                                  <tr>
+                                                            <td align="left" valign="top" class="si-box-middle">
+                                                                      <table width="238" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tr>
+                                                                                          <td width="25" align="left" valign="top">
+                                                                                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="25" height="1" />
+                                                                                          </td>
+                                                                                          <td width="195" align="left" valign="top">
+                                                                                          		<?php if (!isset($_SESSION['new_user_registered'])):?>
+                                                                                                    <form id="user_reg_step1" name="user_reg_step1" method="post" action="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/index.php?cntrl=users&view=users">
+                                                                                                              <table width="195" border="0" cellspacing="0" cellpadding="0">
+                                                                                                              			<tr>
+                                                                                                                        	<td>&nbsp;</td>
+                                                                                                                        </tr>                                                                                                              
+                                                                                                              			<tr>
+                                                                                                                        	<td><span style='color:#06f; font-size:11px;'>Join with us to be a legendary lifetime member</span></td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                                  <td align="left" valign="top">
+                                                                                                                                            <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="15" />
+                                                                                                                                  </td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                                  <td align="left" valign="top" class="text12-para">Your Email</td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                                  <td align="left" valign="top">
+                                                                                                                                            <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                                                                                                                                  </td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                                  <td align="left" valign="top">
+                                                                                                                                        <input name="user_prof[email]" 
+                                                                                                                                        type="text" 
+                                                                                                                                        class="input-element-email" 
+                                                                                                                                        id="email" 
+                                                                                                                                        value="<?php 
+                                                                                                                                                    if (isset($_SESSION['user_prof']['email'])){
+                                                                                                                                                        echo $_SESSION['user_prof']['email'];
+                                                                                                                                                    }else if(isset($_POST['user_prof']['email'])){
+                                                                                                                                                        echo $_POST['user_prof']['email'];
+                                                                                                                                                    }else{
+                                                                                                                                                        echo "";
+                                                                                                                                                    }
+                                                                                                                                                ?>" />
+                                                                                                                                  </td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                                  <td align="left" valign="top">
+                                                                                                                                            <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                                                                                                                                  </td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                                  <td align="left" valign="top" class="text12-para">User Name</td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                                  <td align="left" valign="top">
+                                                                                                                                            <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                                                                                                                                  </td>
+                                                                                                                        </tr>
+                                                                                                                        <tr>
+                                                                                                                                  <td align="left" valign="top">
+                                                                                                                                            <table width="195" border="0" cellspacing="0" cellpadding="0">
+                                                                                                                                                      <tr>
+                                                                                                                                                                <td width="130" align="left" valign="top">
+                                                                                                                                                                          <input name="user_prof[username]" 
+                                                                                                                                                                          type="text" 
+                                                                                                                                                                          class="input-element-uname" 
+                                                                                                                                                                          id="username" 
+                                                                                                                                                                          value="<?php if (isset($_SESSION['user_prof']['username'])){
+                                                                                                                                                                          					echo $_SESSION['user_prof']['username'];
+                                                                                                                                                                          				}else if (isset($_POST['user_prof']['username'])){
+                                                                                                                                                                                        	echo $_POST['user_prof']['username'];
+                                                                                                                                                                                        }else{
+                                                                                                                                                                                        	echo "";
+                                                                                                                                                                                        }
+                                                                                                                                                                                   ?>" />
+                                                                                                                                                                </td>
+                                                           
+                                                                                                                                                                <td width="65" align="right" valign="middle" class="text12-para">
+                                                                                                                                                                          <strong><input type="submit" class="btn-element-continue" value="Continue" /></strong>
+                                                                                                                                                                </td>
+                                                                                                                                                      </tr>
+                                                                                                                                             </table>
+                                                                                                                                   </td>																		     											 
+                                                                                                                        </tr>
+                                                                                                                    </table>
+                                                                                                     </form>
+                                                                                                <?php else:?>     
+                                                                                                	<div style="height:10px; width:50px;"><!-- --></div>
+                                                                                                	<span style="color:#06f; font-size:11px;">Thanks for your registration....</span>
+                                                                                                <?php endif;?>    
+                                                                                          </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                          <td align="left" valign="top">
+                                                                                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="10" />
+                                                                                          </td>
+                                                                                </tr>
+                                                            </td>
+                                                            <td width="18" align="left" valign="top">
+                                                                      <img src="<?php echo $public_src;?>images/spacer.gif" width="17" height="1" />
+                                                            </td>
+                                                  </tr>
+                                        </table>
+                              </td>
+                    </tr>
+                    <tr>
+                              <td align="left" valign="top" class="si-box-down">&nbsp;</td>
+                    </tr>
+          </table>
+</td>

@@ -1,0 +1,173 @@
+<?php
+    if (!isset($_SESSION['loggedin']))
+		$_SESSION['loggedin'] = false;    
+?>
+<table width="238" border="0" cellspacing="0" cellpadding="0">
+<tr>
+        <td align="left" valign="top" class="g-box-up">Login 
+        		<?php if ($_SESSION['loggedin'] == true):?>
+                	<span style="color:#06f;">&nbsp;&nbsp;Success</span>
+                <?php endif;?>
+                <?php echo (isset($_SESSION['flash']['warning'])) ? $_SESSION['flash']['warning'] : "";?>
+        </td>
+</tr>
+<tr>
+<td align="left" valign="top" class="si-box-middle">
+<table width="238" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="25" align="left" valign="top">
+	<img src="<?php echo $public_src;?>images/spacer.gif" width="25" height="1" />
+</td>
+<td width="195" align="left" valign="top">
+<?php if ($_SESSION['loggedin'] != true): ?>
+        <form id="user_login" name="user_login" method="post" action="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/index.php?cntrl=users&view=login">
+        <table width="195" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                          <td align="left" 
+                          		valign="top" 
+                                class="text12-para"><?php 
+                                						$errMsg1 = "";
+                                						$errMsg2 = "";                                                        
+                                						$errMsg = "";                                                        
+                                						if ((isset($_SESSION['accountProblem'])) && ($_SESSION['accountProblem'])){
+                                                            if ((isset($_SESSION['account_axpired'])) 
+                                                            && ($_SESSION['account_axpired'])) { 
+                                                                $errMsg1 = "<span style='color:red;'>Your Account has been expired * Please update the account</span>"; 
+                                                            } 
+                                                            if ((isset($_SESSION['notActivated'])) 
+                                                            && ($_SESSION['notActivated'])) { 
+                                                                $errMsg2 = "<span style='color:red;'>Your Account has not been activated * Please activate the account</span>"; 
+                                                            }                                                            
+                                                        }	
+				   											if ($_SERVER['QUERY_STRING'] == 'login=error'){
+                                                            	if ($errMsg1 != ""){
+                                                                	$errMsg = $errMsg1;                                                            
+                                                                }elseif ($errMsg2 != ""){
+                                                                	$errMsg = $errMsg2;                                                                                                                            	
+                                                                //}else{
+                                                                	//$errMsg = "<span style='color:#06f;'>Join with us to be a legendary lifetime member</span>";                                                            
+                                                                }    
+                                                           // }else{
+                                                                	//$errMsg = "<span style='color:#06f;'>Join with us to be a legendary lifetime member</span>";                                                                                                                        	
+                                                            }
+                                                        echo $errMsg;                                                                                                                            
+                                                    ?></td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top">
+                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top" class="text12-para">
+                                    <strong>Username</strong>
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top">
+                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top">
+                                    <input name="username" type="text" class="input-element-uname" id="username" value="Username" onblur="if(this.value=='') this.value='Username';"onfocus="if(this.value=='Username') this.value='';" />
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top">
+                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top" class="text12-para">
+                                    <strong>Password</strong>
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top">
+                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top">
+                                    <table width="195" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                        <td width="130" align="left" valign="top">
+                                                                  <input name="password" type="password" class="input-element-uname" id="password" value="password" onblur="if(this.value=='') this.value='password';"onfocus="if(this.value=='password') this.value='';" />
+                                                        </td>
+                                                        <td width="65" align="right" valign="middle" class="text12-para">
+                                                                  <input name="btnLogin" type="submit" class="btn-element-sign-up" id="btnLogin" value="Login" />
+                                                        </td>
+                                               </tr>
+                                     </table>
+                          </td>                              
+                </tr>
+                <tr>
+                          <td align="left" valign="top">
+                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top">
+                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                          </td>
+                </tr>                
+                <tr>
+                          <td align="left" valign="top">
+                          			<div id="loginHelp" class="defaultText">
+	                                    <!--<input type="checkbox" name="rememberMe" id="rememberMe" />Remember Me<br />--><a href="http://localhost/drelb/index.php?cntrl=users&view=loginHelp&subView=uname">Can't Remember Username ?</a><br /><a href="http://localhost/drelb/index.php?cntrl=users&view=loginHelp&subView=pword">Can't Remember Password ?</a>                                    
+                                    </div>
+                          </td>
+                </tr>                                
+        </table>
+        </form>
+<?php else:?>   
+        <table width="195" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                          <td align="left" valign="top">
+                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="15" />
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top" class="text12-para">
+                          		<?php if ($_SESSION['user_type'] != "S"):?>                                                                
+                          			Hello <?php echo (isset($_SESSION['first_name'])) ? $_SESSION['first_name'] : "";?>
+                                <?php else:?>
+                          			Hello "Admin" | <a href="http://localhost/drelb/index.php?cntrl=users&view=pwChange" class="changePW">Change Password</a>                                  
+                                <?php endif;?>    
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top" class="text12-para">&nbsp;</td>
+                </tr>                
+                <tr>
+                          <td align="left" valign="top" class="text12-para">
+                          		<?php if ($_SESSION['user_type'] != "S"):?>                                                                                          
+                          			<a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/index.php?cntrl=users&view=viewProfile">View my profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;                                    
+                                <?php else:?>
+                          			<a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/admin.php?cntrl=admin&view=index&page=1" target="_blank">Admin Panel</a> | 
+                                <?php endif;?>    
+                                    <a href="<?php if (isset($_SESSION['logged_user_id'])) { echo 'http://'.$_SERVER['HTTP_HOST'].'/drelb/index.php?cntrl=users&view=clear&rand='.trim(substr(md5($_SESSION['logged_user_id']), 3, 8)); }?>">Log out</a>
+                          </td>
+                </tr>
+                <tr>
+                          <td align="left" valign="top">
+                                    <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="5" />
+                          </td>
+                </tr>
+        </table>
+<?php endif;?>     
+</td>                        
+</tr>
+<tr>
+        <td align="left" valign="top">
+                <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="10" />
+        </td>
+</tr>
+</table>
+</td>
+<td width="18" align="left" valign="top">
+          <img src="<?php echo $public_src;?>images/spacer.gif" width="17" height="1" />
+</td>
+</tr>
+</table>

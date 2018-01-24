@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items>
+	<item filename="img-1.jpg"
+		url="http://localhost/drelb/public/images/thumbnails/" 
+		target="_parent"
+		title="Surrogates (PG-13)" 
+		description="A talented group of dancers, singers, actors, and artists attending New York City High School of Performing Arts" />
+	<item filename="img-2.jpg"
+		url="http://localhost/drelb/public/images/thumbnails/" 
+		target="_blank" 
+		title="Jennifer's Body (R)" 
+		description="We�ve picked a week�s worth of fall premiere nights that you can safely devote to the couch." />
+	<item filename="img-3.jpg"
+		url="http://localhost/drelb/public/images/thumbnails/" 
+		target="_blank" 
+		title="Fame (PG)" 
+		description="$250,000 mortgage for $874/mo. Get Free Quotes. No SSN. No Obligation." />
+</items>

@@ -1,0 +1,60 @@
+<table width="1000" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+                    <td width="242" align="left" valign="top">
+                            <table width="238" border="0" cellspacing="0" cellpadding="0">
+                              	<?php include "index_components/categoties.html";?>
+                              	<?php include "index_components/search.html";?>                                
+                              	<?php include "index_components/title_list.html";?>                                        
+							</table>
+					</td>
+                    <td width="242" align="left" valign="top">&nbsp;</td>                    
+                    <td width="513" align="left" valign="top">
+                              <table width="513" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                              <td align="left" valign="top">
+                                                        <table width="513" border="0" cellspacing="0" cellpadding="0">
+                                                            <?php include VIEW_PATH.$controller.DS.$view.".php"; ?>
+                                                        </table>
+                                              </td>
+                                        </tr>
+                                        <tr>
+                                              <td align="left" valign="top">&nbsp;</td>
+                                        </tr>
+                              </table>
+                    </td>
+                    <?php //if ((isset($_SESSION['credit_limit'])) && (($_SESSION['credit_limit'] != 1.00) or ($_SESSION['credit_limit'] > 1.00))):?>					
+                    	<?php //include "index_components/register.html";?>
+                    <?php //else:?>
+                    	<?php if (
+                        		(isset($_GET['mov'])) 
+                                || ((isset($_SESSION['loggedin'])) 
+                                && ($_SESSION['loggedin']) 
+                                && ($_SESSION['user_type'] == 'N'))
+                              	) :?>
+		                    <?php include "index_components/addFunds.html";?>
+        				<?php else:?>
+		                    <?php include "index_components/register.html";?>                                    	
+                        <?php endif;?>    
+                    <?php //endif;?>
+                    
+			</tr>
+            <tr>
+                    <td align="left" valign="top">
+						<?php include "index_components/login.html";?>
+                     </td>
+            </tr>
+            <tr>
+                      <td align="left" valign="top" class="si-box-down">&nbsp;</td>
+            </tr>
+            <tr>
+            	<?php include "index_components/popular_tags.html";?>
+            </tr>            
+</table>
+</td>
+</tr>
+<tr>
+          <td align="left" valign="top">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+</table>

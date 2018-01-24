@@ -1,0 +1,262 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0 auto;
+}
+body{
+	background: url(../images/bg.gif) 0 0 repeat;
+}
+#mainContent{
+	margin-top:40px;
+	border:1px #06f solid;
+	width:1200px;
+	height:700px;
+	background-color:#dddddd;
+}
+#headerDiv{
+	width:1100px;
+	height:50px;
+	background-color:#dddddd;
+	border:2px solid #06f;
+	margin-top:10px;	
+}
+.adminPanelHeaderPortions{
+	width:274px;
+	float:left;
+	vertical-align:middle;
+	text-align:center;
+	padding-top:15px;
+	height:35px;
+	font-weight:bold;
+}
+.adminPanelHeaderPortions:hover{
+	width:274px;
+	float:left;
+	vertical-align:middle;
+	text-align:center;
+	padding-top:15px;
+	height:35px;
+	font-weight:bold;
+	background-color:#fffff;
+	cursor:pointer;
+	color:#06f;
+}
+.selectedAdminLinks{
+	width:274px;
+	float:left;
+	vertical-align:middle;
+	text-align:center;
+	padding-top:15px;
+	height:35px;
+	font-weight:bold;
+	background-color:#3399FF;
+	color:#FFFFFF;	
+}
+#contentDiv{
+	margin-top:10px;
+	width:1100px;
+	height:600px;
+	border:2px solid #06f;
+}
+#moviesTableDiv{
+	margin-top:10px;
+	margin-left:20px;
+	margin-right:20px;	
+	width:1060px;
+	height:510px;
+	border:1px solid #06f;	
+}
+#pageMesgDiv{
+	width:1100px;
+	height:20px;
+	margin-top:10px;
+	text-align:center;
+	padding-top:5px;
+}
+#paginationDiv{
+	width:1100px;
+	height:23px;
+	margin-top:10px;
+	padding-top:2px;
+	text-align:center;
+	font-size:12px !important;
+}
+#tableTitleList{
+	background-color:#999999;
+	width:1060px;
+	height:30px;
+}
+.id{
+	float:left;
+	width:60px;
+	height:25px;
+	text-align:center;
+	padding-top:5px;			
+}
+.title{
+	float:left;
+	width:400px;
+	height:25px;
+	text-align:center;
+	padding-top:5px;
+	color:#000 !important;		
+}
+.title:hover{
+	float:left;
+	width:400px;
+	height:25px;
+	text-align:center;
+	padding-top:5px;		
+	color:#FFFFFF !important;
+}
+.genre{
+	float:left;
+	width:200px;
+	height:25px;		
+	text-align:center;
+	padding-top:5px;			
+}
+.date_uploaded{
+	float:left;
+	width:175px;
+	height:25px;		
+	text-align:center;
+	padding-top:5px;			
+}
+.hit_count{
+	float:left;
+	width:100px;
+	height:25px;		
+	text-align:center;
+	padding-top:5px;			
+}
+.additional_functions{
+	float:left;
+	width:110px;
+	height:25px;		
+	text-align:center;
+	padding-top:5px;				
+}
+.defaultFont{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+#moviesTableContentList{
+	width:1060px;
+	height:480px;	
+}
+.movieSingleRowContent{
+	width:1060px;
+	height:30px;
+	border-bottom:1px solid #06f;
+}
+.movieSingleRowContent:hover{
+	width:1060px;
+	height:30px;
+	border-bottom:1px solid #06f;
+	background-color:#0099FF;
+	color:#FFFFFF !important;
+}
+.adminLinks{
+	text-decoration:none;
+	color:#000000;
+}
+.adminLinks:hover{
+	text-decoration:none;
+	color:#000000;	
+}
+#movNotExistError{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:18px !important;
+	text-align:center;
+	padding-top:75px;
+	height:100px;
+	width:550px;
+	background-color:#99CCCC;
+	margin-top:75px;	
+}
+#leftSide{	
+	width:530px;
+	height:580px;
+	float:left;
+	padding:10px;
+}
+#rightSide{	
+	width:530px;
+	height:580px;
+	float:left;	
+	padding:10px;	
+}
+#validateErrorMessagesDiv{
+	height:400px;
+	width:410px;
+	padding-left:100px;
+	padding-right:20px;
+}
+#titleInputDiv{
+	width:510px;
+	height:30px;
+	padding-left:20px;
+	padding-top:10px;	
+}
+#descInputDiv{
+	width:510px;
+	height:270px;
+	padding-left:20px;
+	padding-top:10px;
+	vertical-align:middle;
+}
+#subDivDescInput{
+	width:40px; height:230px; float:left;
+}
+#subDivDescInput2{
+	width:360px; height:230px;
+}
+#genreInputDiv{
+	width:510px;
+	height:30px;
+	padding-left:20px;
+	padding-top:10px;	
+}
+#dateReleasedInputDiv{
+	width:510px;
+	height:35px;
+	padding-left:20px;
+	padding-top:10px;
+}
+.adminInput{
+	background-color:#fff;
+	color: #c95b00;
+	border: 1px solid #c95b00;
+}
+.filesErrorIndicate{
+	border:1px solid #f00;
+}
+#divHeight{
+	height:25px;
+	width:510px;
+}
+#importantNoteDiv{
+	height:100px;
+	width:510px;
+	color:#06f !important;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-style:italic;
+}
+#integratedImagePreview{
+	width:432px;
+	height:250px;
+	margin-left:75px;
+	text-align:center;
+	font-size:12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-style:italic;
+	color:#06f;
+}
+.popupWindowCloseLink{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color:#06f !important;
+}

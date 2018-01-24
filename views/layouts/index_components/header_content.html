@@ -1,0 +1,84 @@
+<?php
+	if ($_SERVER['REQUEST_URI'] == "/drelb/"){
+        if (isset($_SESSION['flash']['warning'])){
+            unset($_SESSION['flash']['warning']);	
+         }               	
+    }
+    
+	if ((isset($_GET['view'])) && ($_GET['view'] != "loginError")){
+        if (isset($_SESSION['flash']['warning'])){
+	            unset($_SESSION['flash']['warning']);	
+         }           
+    }     
+?>
+<tr>
+<td align="left" valign="top">
+ <table width="1000" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" valign="top" class="header">
+     <table width="300" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="270" align="left" valign="top">
+         <table width="270" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="right" valign="top">
+             <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="15" />
+            </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top" class="text11">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="right" valign="top">
+             <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="57" />
+            </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top" class="text11">
+             <strong>Welcome To Your Classic Channel.</strong>
+            </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top">
+             <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="8" />
+            </td>
+          </tr>
+        </table>
+       </td>
+       <td width="30" align="left" valign="top">
+        <img src="<?php echo $public_src;?>images/spacer.gif" width="30" height="1" />
+       </td>
+      </tr>
+     </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+     <table width="1000" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="m-sha-left">&nbsp;</td>
+        <td><script type="text/javascript">
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','980','height','255','src','<?php echo $public_src;?>intro-rot','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','movie','<?php echo $public_src;?>intro-rot' ); //end AC code
+</script><noscript><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="980" height="255">
+          <param name="movie" value="<?php echo $public_src;?>intro-rot.swf" />
+          <param name="quality" value="high" />
+          <embed src="<?php echo $public_src;?>intro-rot.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="980" height="255"></embed>
+        </object></noscript></td>
+        <td class="m-sha-right">&nbsp;</td>
+      </tr>
+     </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+     <table width="1000" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="m-sha-left">&nbsp;</td>
+        <td align="right" valign="top" class="m-middle">
+         <a style="font-weight:bold; color:#6D7B35; font-size:11px;" href="http://localhost/drelb/index.php?cntrl=users&view=users">Register</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost/drelb/Comming_Soon.php">Coming soon</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost/drelb/Comming_Soon.php">contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost/drelb/Comming_Soon.php">about drelb</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td class="m-sha-right">&nbsp;</td>
+      </tr>
+     </table>
+    </td>
+  </tr>  

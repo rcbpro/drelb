@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Drelb.com - Administration Panel</title>
+<script type="text/javascript" src="<?php echo $public_src;?>scripts/jscal2.js"></script>
+<script type="text/javascript" src="<?php echo $public_src;?>scripts/en.js"></script>
+<script type="text/javascript" src="<?php echo $public_src;?>scripts/other_js.js"></script>
+<script type="text/javascript" src="<?php echo $public_src;?>scripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+tinyMCE.init({
+plugins : 'media',
+mode : "textareas",
+theme : "advanced",
+content_css : "<?php echo '/'.APP_ROOT.'/public/stylesheets/application.css';?>",
+theme_advanced_buttons1 : "mymenubutton,underline,bold,italic,link,unlink,forecolor,backcolor,bullist,numlist,hr,blockquote,charmap,code,emotions,kickmedia,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo",
+theme_advanced_buttons2 : "cut,copy,paste,bullist,numlist,table,outdent,indent,blockquote,undo,redo,link,unlink,code,forecolor,backcolor,emotions,fullscreen,formatselect,fontselect,fontsizeselect",
+theme_advanced_buttons3 : "",
+theme_advanced_toolbar_location : "top",
+theme_advanced_toolbar_align : "left",
+theme_advanced_statusbar_location : "bottom"});
+</script>
+<link rel="stylesheet" href="<?php echo $public_src;?>stylesheets/jscal2.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $public_src;?>stylesheets/border-radius.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $public_src;?>stylesheets/steel.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $public_src;?>stylesheets/admin.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $public_src;?>stylesheets/styles.css" type="text/css" />
+</head>
+<body>
+<?php
+	if ($_GET['view'] == 'newadminuser'){
+    	$height = "300px";
+    }else{
+    	$height = "700px";    	
+    }
+	if (isset($_SESSION['loggedin']) && ($_SESSION['loggedin'])){
+    	$loginText = "Logout";        
+        $loginLink = "adminLogout";
+    }else{
+    	$loginText = "Login";    	
+        $loginLink = "adminLogin";        
+    }
+?>
+	<div id="mainContent" style="height:<?php echo $height;?>">
+    	<div id="headerDiv">
+        	<a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/admin.php?cntrl=admin&view=index&page=1" class="adminLinks"><div class="<?php echo ($view == "index") ? "selectedAdminLinks" : "adminPanelHeaderPortions";?> defaultFont" style="border-right:#06f 1px dashed;">Movie Index</div></a>
+        	<a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/admin.php?cntrl=admin&view=add" class="adminLinks"><div class="<?php echo ($view == "add") ? "selectedAdminLinks" : "adminPanelHeaderPortions";?> defaultFont" style="border-right:#06f 1px dashed;">Add Movies</div></a>
+        	<a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/admin.php?cntrl=admin&view=edit" class="adminLinks"><div class="<?php echo ($view == "edit") ? "selectedAdminLinks" : "adminPanelHeaderPortions";?> defaultFont" style="border-right:#06f 1px dashed;">Edit Movies</div></a>            
+        	<a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/admin.php?cntrl=admin&view=newadminuser" class="adminLinks"><div class="<?php echo ($view == "newadminuser") ? "selectedAdminLinks" : "adminPanelHeaderPortions";?> defaultFont">Add New Admin User</div></a>            
+        </div>
+        <?php include "admin_components/adminCommon.html";?>
+    </div>
+</body>
+</html>

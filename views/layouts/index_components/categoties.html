@@ -1,0 +1,82 @@
+<?php
+	
+	global $movieCategories;
+	$mov_cat_menu = $movieCategories->display_all_movie_categories();				    
+
+    if (strstr($_SERVER['QUERY_STRING'],"mov")){
+        $curr_page_no = substr(str_replace("/?mov=", "", str_replace(DS.APP_ROOT.DS."index/page/", "", $_SERVER['REQUEST_URI'])), 0, 1); 
+        if (strstr($_SERVER['REQUEST_URI'], "index/page/".$curr_page_no."/?mov=")){
+            $path = WEBSITE.str_replace("/?mov=".$_GET['mov'], "", strstr($_SERVER['REQUEST_URI'], "index/page/".$curr_page_no."/?mov="));
+        }
+    }
+?>
+<tr>
+          <td align="left" valign="top">
+                    <table width="238" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                        <td align="left" valign="top" class="g-box-up">categories</td>
+                              </tr>
+                             <tr>
+                                    <td align="center" valign="top" class="si-box-middle">
+                                              <table width="238" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                                  <td width="25" align="left" valign="top">
+                                                                            <img src="<?php echo $public_src;?>images/spacer.gif" width="25" height="1" />
+                                                                  </td>
+                                                                  <td width="195" align="left" valign="top">
+                                                                            <table width="195" border="0" cellspacing="0" cellpadding="0">
+                                                                                      <tr>
+                                                                                                <td align="left" valign="top">
+                                                                                                          <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="15" />
+                                                                                                </td>
+                                                                                      </tr>
+                                                                                      <tr>
+                                                                                                <td align="left" valign="top" class="text12-para" style="color:#06f;">Watch and download hundreds of classic films on your computer</td>
+                                                                                      </tr>
+                                                                                      <tr>
+                                                                                                <td align="left" valign="top">
+                                                                                                          <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="10" />
+                                                                                                </td>
+                                                                                      </tr>
+                                                                                      <tr>
+                                                                                                <td align="left" valign="top">
+                                                                                                          <table width="195" border="0" cellspacing="0" cellpadding="0">
+                                                                                                          		<?php
+                                                                                                                	$count = count($mov_cat_menu);
+                                                                                                                    $i=0;
+                                                                                                                	while($count > 0){
+                                                                                                                ?>    
+                                                                                                                    <tr>
+                                                                                                                              <td width="25" align="left" valign="middle">
+                                                                                                                                        <img src="<?php echo $public_src;?>images/cir.gif" width="15" height="15" />
+                                                                                                                              </td>
+                                                                                                                              <td width="170" class="text12-list"><a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/index.php?cntrl=index&view=index&page=1&genre_id=<?php echo $mov_cat_menu[$i]['id'];?>" class="<?php if (isset($_GET['genre_id']) && ($_GET['genre_id'] == $mov_cat_menu[$i]['id'])) { echo 'selected_tr' ; } else { echo 'special_links'; }?>"><?php echo $mov_cat_menu[$i]['cat_name'];?></a></td>
+                                                                                                                    </tr>
+                                                                                                                <?php
+                                                                                                                    $i++;
+                                                                                                                    $count--;                                                                                                                
+                                                                                                                	}
+                                                                                                                ?>    
+                                                                                                          </table>
+                                                                                                </td>
+                                                                                      </tr>
+                                                                                      <tr>
+                                                                                                <td align="left" valign="top">
+                                                                                                          <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="10" />
+                                                                                                </td>
+                                                                                      </tr>
+                                                                            </table>
+                                                                  </td>
+                                                                  <td width="18" align="left" valign="top">
+                                                                            <img src="<?php echo $public_src;?>images/spacer.gif" width="18" height="1" />
+                                                                  </td>
+                                                        </tr>
+                                              </table>
+                                    </td>
+                                </tr>
+                                  <tr>
+                                            <td align="left" valign="top" class="si-box-down">&nbsp;</td>
+                                  </tr>
+		</table>
+	</td>
+</tr>

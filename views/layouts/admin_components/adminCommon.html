@@ -1,0 +1,10 @@
+<?php
+	if ($_GET['view'] == 'newadminuser'){
+    	$height = "175px";
+    }else{
+    	$height = "600px";    	
+    }
+?>
+<div id="contentDiv" style="height:<?php echo $height;?>">
+	<?php include VIEW_PATH.DS.$controller.DS.$view.".php";?>
+</div>

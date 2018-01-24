@@ -1,0 +1,65 @@
+<tr>
+          <td align="left" valign="top">
+                    <table width="238" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                        <td align="left" valign="top" class="g-box-up">Alphabetical Title List</td>
+                              </tr>
+                              <tr>
+                                        <td align="center" valign="top" class="si-box-middle">
+                                                  <table width="238" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                      <td width="25" align="left" valign="top">
+                                                                                <img src="<?php echo $public_src;?>images/spacer.gif" width="25" height="1" />
+                                                                      </td>
+                                                                      <td width="195" align="left" valign="top">
+                                                                                <table width="195" border="0" cellspacing="0" cellpadding="0">
+                                                                                          <tr>
+                                                                                                    <td align="left" valign="top">
+                                                                                                              <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="15" /></td>
+                                                                                          </tr>
+                                                                                          <tr>
+                                                                                                    <td align="left" valign="top" class="text12-para">
+                                                                                                    	  <strong>
+                                                                                                          	<?php
+                                                                                                                for ($i=65; $i <=90; $i++) {
+                                                                                                                 	$x = chr($i);
+                                                                                                            ?>        
+                                                                                                               <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/drelb/index.php?cntrl=index&view=index&page=1&letter=<?php echo $x;?>" class="<?php if ((isset($_GET['letter'])) && ($_GET['letter'] == $x)){ echo 'selected_letter'; } else { echo 'speical_links'; }?>">
+                                                                                                               			<?php echo $x;?>
+                                                                                                               </a>
+                                                                                                            <?php 
+                                                                                                            	if ($i == 90){
+                                                                                                                	break;
+                                                                                                                }else{    	
+                                                                                                            ?>
+                                                                                                            -
+                                                                                                            <?php } ?>
+                                                                                                            <?php  
+                                                                                                                }
+                                                                                                             ?>                                                                                                             
+                                                                                                          </strong>
+                                                                                                    </td>
+                                                                                          </tr>
+                                                                                          <tr>
+                                                                                                    <td align="left" valign="top">
+                                                                                                              <img src="<?php echo $public_src;?>images/spacer.gif" width="1" height="10" />
+                                                                                                    </td>
+                                                                                          </tr>
+                                                                                </table>
+                                                                      </td>
+                                                                      <td width="18" align="left" valign="top">
+                                                                                <img src="<?php echo $public_src;?>images/spacer.gif" width="18" height="1" />
+                                                                      </td>
+                                                            </tr>
+                                                  </table>
+                                        </td>
+                              </tr>
+                              <tr>
+                                        <td align="left" valign="top" class="si-box-down">&nbsp;</td>
+                              </tr>
+                    </table>
+          </td>
+</tr>
+<tr>
+          <td align="left" valign="top">&nbsp;</td>
+</tr>
